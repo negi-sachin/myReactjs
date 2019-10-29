@@ -604,3 +604,66 @@ function ActionLink() {
 //   );
 // }
 
+//----------------------------------------------------------------------Lists and keys----------------------------------------------------------------
+
+//--List--
+
+//Tranforming Array to Lists,also performing some operations on it
+
+// const numbers = [1, 2, 3, 4, 5];
+// const doubled = numbers.map((number) => number * 2);
+// console.log(doubled);
+
+//REndering Multi componenets
+//You can build collections of elements[1,2,,4,56] and include them in JSX using curly braces {}.
+//Below, we loop through the numbers array using the JavaScript map() function. We return a <li> element for each item. 
+//Finally, we assign the resulting array of elements to listItems:
+
+// const numbers = [1, 2, 3, 4, 5];
+// const listItems = numbers.map((number) =>
+//   <li>{number}</li>
+// );
+
+// ReactDOM.render(
+//   <ul>{listItems}</ul>,
+//   document.getElementById('root')
+// );
+
+//We can refactor the previous example into a component that accepts an array of numbers and outputs a list of elements.
+
+// function NumberList(props) {
+//   const numbers = props.numbers;
+//   const listItems = numbers.map((number) =>
+//     <li>{number}</li>
+//   );
+//   return (
+//     <ul>{listItems}</ul>
+//   );
+// }
+
+// const numbers = [1, 2, 3, 4, 5];
+// ReactDOM.render(
+//   <NumberList numbers={numbers} />,
+//   document.getElementById('root')
+// );
+
+//on running above code ,we will get an "key "error" .so we add an ke 
+
+// function NumberList(props) {
+//   const numbers = props.numbers;
+//   const listItems = numbers.map((number) =>
+//     <li key={number.toString()}>
+//       {number}
+//     </li>
+//   );
+//   return (
+//     <ul>{listItems}</ul>
+//   );
+// }
+
+// const numbers = [1, 2, 3, 4, 5];
+// ReactDOM.render(
+//   <NumberList numbers={numbers} />,
+//   document.getElementById('root')
+// );
+
