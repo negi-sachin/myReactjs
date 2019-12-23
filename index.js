@@ -100,6 +100,9 @@
 //When React sees an element representing a user-defined component, 
 //it passes JSX attributes to this component as a single object. We call this object “props”.
 //also a same named function is called . eg Welcome()
+//There are wo types of component:
+//1.Stateless Functional Component
+//2. Statefull Class Component
 
 //will display "hello,sara"
 
@@ -376,6 +379,8 @@
 
 // ReactDOM.render(<Show />,document.getElementById('root'))
 
+
+
 //--------------------------------------------------------Handling Events---------------------------------------------------------------------
 //Points:-
 // 1. React events are named using camelCase, rather than lowercase.
@@ -396,7 +401,7 @@ function ActionLink() {
     }
   
     return (
-      <a href="#" onClick={handleClick}>
+      <a href="#" onClick={handleClick}>//"onClick" shud be CAmel Cased
         Click me
       </a>
     );
@@ -647,7 +652,7 @@ function ActionLink() {
 //   document.getElementById('root')
 // );
 
-//on running above code ,we will get an "key "error" .so we add an ke 
+//on running above code ,we will get an "key "error" .so we add an key
 
 // function NumberList(props) {
 //   const numbers = props.numbers;
@@ -667,3 +672,52 @@ function ActionLink() {
 //   document.getElementById('root')
 // );
 
+
+// internity ques to make a nav bar
+
+// class Buttons extends React.Component{
+
+//   constructor(props) {
+//     super(props);
+//     this.Home = this.Home.bind(this);
+//     this.photo = this.photo.bind(this);
+//     this.video = this.video.bind(this);
+//   }
+ 
+//    Home(e) {
+//     e.preventDefault();
+//     ReactDOM.render(<h1>This is Home</h1>,document.getElementById('app'));
+//   }
+
+//   photo(e) {
+//     e.preventDefault();
+//     ReactDOM.render(<h1>This is photo</h1>,document.getElementById('app'));
+//   }
+
+//   video(e) {
+//     e.preventDefault();
+//     ReactDOM.render(<h1>This is Video</h1>,document.getElementById('app'));
+//   }
+
+ 
+//   render(){
+//     return(<div>
+//       <button onClick={this.Home}>
+//         Home
+//       </button>
+//       <button onClick={this.photo}>
+//         PHOTOS
+//       </button>
+//       <button onClick={this.video}>
+//         Videos
+//       </button>
+//     </div>)
+//   }
+// }
+
+
+
+
+
+
+// ReactDOM.render(<Buttons/>,document.getElementById('root'));
