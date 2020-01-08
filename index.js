@@ -269,7 +269,8 @@
 // We can declare special methods on the component class to run some code when a component mounts and unmounts:
 //These methods are called “lifecycle methods”.
 
-//The componentDidMount() method runs after the component output has been rendered to the DOM. This is a good place to set up a timer:
+//The componentDidMount() method runs after the component output has been rendered to the DOM. 
+//This is a good place to set up a timer:
 
 // componentDidMount() {
 //     this.timerID = setInterval(
@@ -721,3 +722,44 @@ function ActionLink() {
 
 
 // ReactDOM.render(<Buttons/>,document.getElementById('root'));
+
+//-------------------------------------------------FORMS----------------------------------------------------
+
+class NameForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: 'Write here boi'};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    
+    this.setState({value: event.target.value.toUpperCase()});
+    console.log(this.state.value);
+  }
+
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Name:
+          <input type="text" value={this.state.value} onChange={this.handleChange} />
+        </label>
+        <input type="submit" value="Submit" />
+        <input type="file" id="input"></input>
+      </form>
+    );
+  }
+}
+
+ReactDOM.render(
+  <NameForm />,
+  document.getElementById('root')
+);
